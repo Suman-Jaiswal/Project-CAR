@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car</title>
+  <style>
+    *{
+      margin: 0%;
+      padding: 0%;
+     
+      
+    }
+    body{
+      overflow-x: hidden;
+    }
+    .sky {
+      position: absolute;
+      height: 100vh;
+      width: 100%;
+      background-image: url('./sky.jpg');
+      background-repeat: no-repeat;
+    }
+    .building{
+      position: absolute;
+      bottom: 0;
+      background-image: url('./buildings.png');
+      width: 600%;
+      height: 80%;
+      background-repeat: repeat-x;
+      animation: building linear 60s infinite;
+    }
+    .track{
+      position: absolute;
+      bottom: 0;
+      background-image: url('./track.jpg');
+      width: 600%;
+      height: 30%;
+      background-size: contain;
+      background-repeat: repeat-x;
+      animation: track linear 15s infinite;
+    }
+    .car{
+      height: 200px;
+      width: 250px;
+      background-image: url('/car.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      position: absolute;
+      left: 20%;
+      bottom: 7%;
+      animation: car linear 1s infinite;
+    }
+    .left img{
+      width: 60px;
+    height: 60px;
+    position: relative;
+    top: 33px;
+    left: 21px;
+    animation: wheelRotation linear 0.3s infinite;
+    }
+    .right img{
+      width: 65px;
+    height: 65px;
+    position: relative;
+    top: -30px;
+    left: 163px;
+    animation: wheelRotation linear 0.3s infinite;
+    }
+  @keyframes wheelRotation {
+    100%{
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes track {
+    100%{
+      transform: translateX(-500vw);
+    }
+  }
+  @keyframes building {
+   
+    100%{
+      transform: translateX(-500vw);
+     
+    }
+  }
+  @keyframes car {
+    30%{
+      transform: translateY(-2px);
+    }
+    80%{
+      transform: translateY(2px);
+    }
+  }
+
+  </style>
+</head>
+<body>
+    <div class="container">
+      <div class="sky">
+        <div class="building"></div>
+         <div class="track"></div>
+         <div class="car">
+           <div class="left"><img src="./left.jpg" alt=""></div>
+           <div class="right"><img src="./right.jpg" alt=""></div>
+         </div>
+      </div>
+    </div>
+    <script>
+      var sound = document.createElement('audio')
+      sound.setAttribute('src' , 'sound.mp3')
+      sound.loop=true;
+      setTimeout(sound.play(), 100)
+      
+    </script>
+</body>
+</html>
